@@ -1,0 +1,8 @@
+require "resonline/version"
+require "resonline/configuration"
+require "resonline/constants"
+require "resonline/error_messages"
+require "savon"
+require "resonline/inventory"
+require "resonline/service"
+require "resonline/transformation"

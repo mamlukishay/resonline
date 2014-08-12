@@ -8,7 +8,7 @@ module Resonline
       options
     end
 
-    def self.get_hotel_rooms(hotel_id)
+    def self.get_hotel_rooms
       client = Savon.client(soap_options)
       xml = '
         <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://cm.schema.com/direct/2.0/" xmlns:ns1="http://cm.schema.com/api-core/2.0/">
@@ -24,7 +24,7 @@ module Resonline
                    <!--Optional:-->
                    <ns1:Password>' + Resonline.configuration.password + '</ns1:Password>
                    <!--Optional:-->
-                   <ns1:HotelId>' + hotel_id.to_s + '</ns1:HotelId>
+                   <ns1:HotelId>' + Resonline.configuration.hotel_id.to_s + '</ns1:HotelId>
                    <!--Optional:-->
                 </ns:request>
              </ns:GetHotelRooms>
@@ -40,7 +40,7 @@ module Resonline
       return Resonline::ErrorMessages.exception(e)
     end
 
-    def self.get_hotel_rate_package_deals(hotel_id, rate_package_id)
+    def self.get_hotel_rate_package_deals(rate_package_id)
       client = Savon.client(soap_options)
       xml = '
         <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://cm.schema.com/direct/2.0/" xmlns:ns1="http://cm.schema.com/api-core/2.0/" xmlns:dir="http://schemas.datacontract.org/2004/07/DirectApi.Service.Content.Model">
@@ -56,7 +56,7 @@ module Resonline
                    <!--Optional:-->
                    <ns1:Password>' + Resonline.configuration.password + '</ns1:Password>
                    <!--Optional:-->
-                   <ns1:HotelId>' + hotel_id.to_s + '</ns1:HotelId>
+                   <ns1:HotelId>' + Resonline.configuration.hotel_id.to_s + '</ns1:HotelId>
                    <!--Optional:-->
                    <dir:HotelRatePackageID>' + rate_package_id.to_s + '</dir:HotelRatePackageID>
                 </ns:request>

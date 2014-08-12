@@ -1,6 +1,6 @@
 module Resonline
   class Configuration
-    attr_accessor :cm_username, :cm_password, :username, :password
+    attr_accessor :cm_username, :cm_password, :username, :password, :hotel_id
   end
 
   class << self

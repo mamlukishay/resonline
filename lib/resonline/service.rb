@@ -34,7 +34,7 @@ module Resonline
       if response.success?
         return response.body[:get_hotel_rooms_response][:get_hotel_rooms_result]
       else
-        return { error: 'error' }
+        return Resonline::ErrorMessages.failed_response(response)
       end
     rescue Exception => e
       return Resonline::ErrorMessages.exception(e)
@@ -67,7 +67,7 @@ module Resonline
       if response.success?
         return response.body[:get_hotel_rate_package_deals_response][:get_hotel_rate_package_deals_result]
       else
-        return { error: 'error' }
+        return Resonline::ErrorMessages.failed_response(response)
       end
     rescue Exception => e
       return Resonline::ErrorMessages.exception(e)

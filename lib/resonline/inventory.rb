@@ -34,7 +34,7 @@ module Resonline
       if response.success?
         return response.body[:get_rate_packages_response][:get_rate_packages_result]
       else
-        return { error: 'error' }
+        return Resonline::ErrorMessages.failed_response(response)
       end
     rescue Exception => e
       return Resonline::ErrorMessages.exception(e)
@@ -75,7 +75,7 @@ module Resonline
       if response.success?
         return response.body[:get_inventory_response][:get_inventory_result]
       else
-        return { error: 'error' }
+        return Resonline::ErrorMessages.failed_response(response)
       end
     rescue Exception => e
       return Resonline::ErrorMessages.exception(e)

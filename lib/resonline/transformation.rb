@@ -41,7 +41,7 @@ module Resonline
       if response.success?
         return response.body[:get_availability_response][:get_availability_result]
       else
-        return { error: 'error' }
+        return Resonline::ErrorMessages.failed_response(response)
       end
     rescue Exception => e
       return Resonline::ErrorMessages.exception(e)

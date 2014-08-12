@@ -60,13 +60,12 @@ module Resonline
                   <!--Optional:-->
 
                   <!--Optional:-->
-                  <ns:EndDate>2014-12-31T15:07:38.6875000-05:00</ns:EndDate>
+                  <ns:EndDate>' + end_date.xmlschema + '</ns:EndDate>
                   <ns:RatePackages>
-                    <!--Zero or more repetitions:-->
-                    <ns:RatePackageId>109827</ns:RatePackageId>
+                    <!--Zero or more repetitions:-->' + rate_package_ids.map { |id| "<ns:RatePackageId>#{id}</ns:RatePackageId>" }.join('') + '
                   </ns:RatePackages>
                   <!--Optional:-->
-                  <ns:StartDate>2014-08-20T15:07:38.6875000-05:00</ns:StartDate>
+                  <ns:StartDate>' + start_date.xmlschema + '</ns:StartDate>
                 </ns:request>
              </ns:GetInventory>
           </soapenv:Body>

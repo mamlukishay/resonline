@@ -41,6 +41,7 @@ module Resonline
     end
 
     def self.get_inventory(start_date, end_date, rate_package_ids = [])
+      puts "-------- Start Date : #{start_date}, End Date : #{end_date} --------------"
       client = Savon.client(soap_options)
       xml = '
         <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://cm.schema.com/direct/2.0/" xmlns:ns1="http://cm.schema.com/api-core/2.0/">
@@ -58,12 +59,11 @@ module Resonline
                   <!--Optional:-->
                   <ns1:HotelId>' + Resonline.configuration.hotel_id.to_s + '</ns1:HotelId>
                   <!--Optional:-->
-
-                  <!--Optional:-->
-                  <ns:EndDate>' + end_date.xmlschema + '</ns:EndDate>
                   <ns:RatePackages>
                     <!--Zero or more repetitions:-->' + rate_package_ids.map { |id| "<ns:RatePackageId>#{id}</ns:RatePackageId>" }.join('') + '
                   </ns:RatePackages>
+                  <!--Optional:-->
+                  <ns:EndDate>' + end_date.xmlschema + '</ns:EndDate>
                   <!--Optional:-->
                   <ns:StartDate>' + start_date.xmlschema + '</ns:StartDate>
                 </ns:request>
@@ -79,6 +79,5 @@ module Resonline
     rescue Exception => e
       return Resonline::ErrorMessages.exception(e)
     end
-
   end
 end

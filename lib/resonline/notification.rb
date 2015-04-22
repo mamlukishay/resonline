@@ -36,7 +36,7 @@ module Resonline
 					                  <ns:Infants>'+ options[:infants] +'</ns:Infants>
 					                  <!--Optional:-->
 					                  <ns:OwingAmount>'+ options[:total_amount] +'</ns:OwingAmount>
-					                  <ns:PropertyId>'+ Resonline.configuration.hotel_id.to_s +'</ns:PropertyId>
+					                  <ns:PropertyId>' + Resonline.configuration.hotel_id.to_s + '</ns:PropertyId>
 					                  <ns:RoomCode>'+ options[:room_code] +'</ns:RoomCode>
 					                  <!--Optional:-->
 					                  <ns:Quantity>'+ options[:quantity] +'</ns:Quantity>

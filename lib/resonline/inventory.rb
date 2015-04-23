@@ -59,11 +59,12 @@ module Resonline
                   <!--Optional:-->
                   <ns1:HotelId>' + Resonline.configuration.hotel_id.to_s + '</ns1:HotelId>
                   <!--Optional:-->
+                  <ns1:HotelAuthenticationKey/>
+                  <!--Optional:-->
+                  <ns:EndDate>' + end_date.strftime("%Y-%m-%d") + '</ns:EndDate>
                   <ns:RatePackages>
                     <!--Zero or more repetitions:-->' + rate_package_ids.map { |id| "<ns:RatePackageId>#{id}</ns:RatePackageId>" }.join('') + '
                   </ns:RatePackages>
-                  <!--Optional:-->
-                  <ns:EndDate>' + end_date.strftime("%Y-%m-%d") + '</ns:EndDate>
                   <!--Optional:-->
                   <ns:StartDate>' + start_date.strftime("%Y-%m-%d") + '</ns:StartDate>
                 </ns:request>

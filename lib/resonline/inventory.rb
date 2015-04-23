@@ -63,9 +63,9 @@ module Resonline
                     <!--Zero or more repetitions:-->' + rate_package_ids.map { |id| "<ns:RatePackageId>#{id}</ns:RatePackageId>" }.join('') + '
                   </ns:RatePackages>
                   <!--Optional:-->
-                  <ns:EndDate>' + end_date.xmlschema + '</ns:EndDate>
+                  <ns:EndDate>' + end_date.strftime("%Y-%m-%d") + '</ns:EndDate>
                   <!--Optional:-->
-                  <ns:StartDate>' + start_date.xmlschema + '</ns:StartDate>
+                  <ns:StartDate>' + start_date.strftime("%Y-%m-%d") + '</ns:StartDate>
                 </ns:request>
              </ns:GetInventory>
           </soapenv:Body>

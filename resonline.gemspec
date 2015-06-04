@@ -6,8 +6,8 @@ require 'resonline/version'
 Gem::Specification.new do |spec|
   spec.name          = "resonline"
   spec.version       = Resonline::VERSION
-  spec.authors       = ["Rijaludin Muhsin"]
-  spec.email         = ["rijaludinmuhsin@gmail.com"]
+  spec.authors       = ["Rijaludin Muhsin", "Lutvi Rosyady"]
+  spec.email         = ["rijaludinmuhsin@gmail.com", "moorails@gmail.com"]
   spec.summary       = %q{Ruby Helper for resonline SOAP}
   spec.description   = %q{Ruby Helper for resonline SOAP}
   spec.homepage      = ""

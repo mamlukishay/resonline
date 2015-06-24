@@ -50,12 +50,12 @@ module Resonline
              <ns:GetInventory>
                 <!--Optional:-->
                 <ns:request>
-                  <ns1:ChannelManagerUsername>' + Resonline.configuration.cm_username + '</ns1:ChannelManagerUsername>
-                  <ns1:ChannelManagerPassword>' + Resonline.configuration.cm_password + '</ns1:ChannelManagerPassword>
+                  <ns1:ChannelManagerUsername>' + Resonline.configuration.cm_username.gsub(/\s/, "\ ") + '</ns1:ChannelManagerUsername>
+                  <ns1:ChannelManagerPassword>' + Resonline.configuration.cm_password.gsub(/\s/, "\ ") + '</ns1:ChannelManagerPassword>
                   <!--Optional:-->
-                  <ns1:Username>' + Resonline.configuration.username + '</ns1:Username>
+                  <ns1:Username>' + Resonline.configuration.username.gsub(/\s/, "\ ") + '</ns1:Username>
                   <!--Optional:-->
-                  <ns1:Password>' + Resonline.configuration.password + '</ns1:Password>
+                  <ns1:Password>' + Resonline.configuration.password.gsub(/\s/, "\ ") + '</ns1:Password>
                   <!--Optional:-->
                   <ns1:HotelId>' + Resonline.configuration.hotel_id.to_s + '</ns1:HotelId>
                   <ns:EndDate>' + end_date.strftime("%Y-%m-%d") + '</ns:EndDate>

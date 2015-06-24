@@ -71,6 +71,7 @@ module Resonline
              </ns:GetInventory>
           </soapenv:Body>
         </soapenv:Envelope>'
+        pp xml
       response = client.call(:get_inventory, xml: xml)
       if response.success?
         return response.body[:get_inventory_response][:get_inventory_result]

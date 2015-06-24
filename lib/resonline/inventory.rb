@@ -59,7 +59,7 @@ module Resonline
                   <!--Optional:-->
                   <ns1:HotelId>' + Resonline.configuration.hotel_id.to_s + '</ns1:HotelId>
                   <!--Optional:-->
-                  <ns1:HotelAuthenticationKey/>
+                  <!--<ns1:HotelAuthenticationKey/>-->
                   <!--Optional:-->
                   <ns:EndDate>' + end_date.strftime("%Y-%m-%d") + '</ns:EndDate>
                   <ns:RatePackages>

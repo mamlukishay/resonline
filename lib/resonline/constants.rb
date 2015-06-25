@@ -1,5 +1,5 @@
 module Resonline
-  SOAPPrefixUrl = 'https://api-pvt.resonline.com.au/direct/2.0/services/'
+  SOAPPrefixUrl = 'https://api.resonline.com.au/direct/2.0/services/'
   SOAPNamespaces = { 
     namespaces: {
       "xmlns:soapenv" => "http://schemas.xmlsoap.org/soap/envelope/",

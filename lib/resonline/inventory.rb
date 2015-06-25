@@ -41,7 +41,7 @@ module Resonline
     end
 
     def self.get_inventory(start_date, end_date, rate_package_ids = [])
-      puts "-------- Start Date : #{start_date}, End Date : #{end_date} --------------"
+      # puts "-------- Start Date : #{start_date}, End Date : #{end_date} --------------"
       client = Savon.client(soap_options)
       xml = '
         <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://cm.schema.com/direct/2.0/" xmlns:ns1="http://cm.schema.com/api-core/2.0/">
@@ -68,7 +68,6 @@ module Resonline
              </ns:GetInventory>
           </soapenv:Body>
         </soapenv:Envelope>'
-        pp xml
       response = client.call(:get_inventory, xml: xml)
       if response.success?
         return response.body[:get_inventory_response][:get_inventory_result]
